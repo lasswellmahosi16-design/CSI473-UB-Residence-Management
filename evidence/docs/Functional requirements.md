@@ -21,4 +21,42 @@ creating a maintenance ticket.
 The system shall allow an authorised Student Welfare Officer to review and
 verify a submitted maintenance ticket.
 
-### FR-05 — Reject Maintenance Reportr
+### FR-05 — Reject Maintenance Report
+
+The system shall allow an authorised Student Welfare Officer to reject a
+maintenance report when it is invalid, incomplete or does not satisfy the
+verification rules.
+
+### FR-06 — Assign Maintenance Ticket
+
+The system shall allow an authorised Maintenance Administrator to assign a
+verified maintenance ticket to an appropriate maintenance staff member.
+
+### FR-07 — Track Ticket Status
+
+The system shall maintain and display the current status of each maintenance
+ticket throughout its lifecycle.
+
+### FR-08 — Update Maintenance Progress
+
+The system shall allow authorised maintenance staff to update an assigned
+ticket to indicate that maintenance work has started.
+
+### FR-09 — Mark Ticket as Resolved
+
+The system shall allow authorised maintenance staff to mark a ticket as
+resolved after the reported maintenance problem has been repaired.
+### FR-10 — Close Maintenance Ticket
+
+The system shall allow an authorised user to close a maintenance ticket after
+the ticket has been marked as resolved.
+
+### FR-11 — View Ticket Status
+
+The system shall allow an authorised student to view the current status and
+basic details of their maintenance ticket.
+
+### FR-12 — Enforce Role-Based Access
+
+The system shall restrict maintenance ticket operations according to the
+authenticated user's role.
