@@ -18,12 +18,12 @@ creating a maintenance ticket.
 
 ### FR-04 — Verify Maintenance Report
 
-The system shall allow an authorised Student Welfare Officer to review and
+The system shall allow an authorised Student Welfare personnel to review and
 verify a submitted maintenance ticket.
 
 ### FR-05 — Reject Maintenance Report
 
-The system shall allow an authorised Student Welfare Officer to reject a
+The system shall allow an authorised Student Welfare personnel to reject a
 maintenance report when it is invalid, incomplete or does not satisfy the
 verification rules.
 
