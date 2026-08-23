@@ -13,6 +13,6 @@ By submitting code, documentation, or other content to this repository, you agre
    - You consent to being credited as a contributor in project documentation, release notes, or other acknowledgments.
 
 **4. Revocation**
-   - Once submitted, Contributions cannot be withdrawn, but you may request removal of attribution if desired.
+   - Once submitted, Contributions cannot be withdrawn,  but you may request removal of attribution if desired.
 
 
