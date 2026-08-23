@@ -51,7 +51,6 @@
 
 ### Collaborators
 
-- Residence
 - Student
 - MaintenanceTicket
 
