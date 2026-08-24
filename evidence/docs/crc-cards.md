@@ -2,8 +2,6 @@
 
 ---
 
-# CRC Cards: UB-DormHub
-
 ## CRC-01 — MaintenanceComplaint
 
 ### Responsibilities
