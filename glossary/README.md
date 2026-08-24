@@ -1,52 +1,68 @@
 # Domain Glossary: UB-DormHub
 
-* **UB-DormHub:** The proposed residence maintenance management system for reporting, verifying, assigning, tracking, resolving, and closing student residence maintenance faults.
+* **UB-DormHub:** The proposed residence maintenance management system for reporting, verifying, assigning, tracking, resolving, and closing student residence maintenance complaints.
 
-* **Resident Student:** A registered UB student assigned to a residence room who reports maintenance faults and views the status of their maintenance tickets.
+* **Resident Student:** A registered UB student assigned to a residence room who can report maintenance problems and track the status of their maintenance complaints.
 
-* **Resident Assistant (RA):** A student representative responsible for assisting residents with residence matters and, under the current complaint process, recording or facilitating the submission of room maintenance complaints.
+* **Resident Assistant (RA):** A student representative who assists residents with residence matters and may facilitate the reporting of room maintenance complaints.
 
-* **Student Welfare:** The University administrative body responsible for reviewing and verifying maintenance requests before they proceed to Maintenance.
+* **Student Welfare:** The University administrative body responsible for reviewing and verifying maintenance complaints before they proceed to Maintenance.
 
-* **Student Welfare Officer:** An authorised representative of Student Welfare who reviews, verifies, or rejects reported maintenance tickets within UB-DormHub.
+* **Student Welfare Officer:** An authorised representative of Student Welfare who reviews, verifies, rejects, and certifies maintenance complaints.
 
-* **Maintenance Administrator:** An authorised user responsible for assigning verified maintenance tickets to appropriate maintenance staff.
+* **Maintenance Manager:** An authorised user responsible for reviewing verified maintenance complaints, assigning them to Maintenance Staff, and monitoring ongoing maintenance work.
 
-* **Maintenance Staff:** Field technicians responsible for carrying out physical repairs, updating maintenance progress, and marking completed work as resolved.
+* **Maintenance Staff:** Field technicians responsible for carrying out physical maintenance work, recording repair progress, and marking completed work as resolved.
 
-* **Residence:** A University of Botswana student accommodation facility containing one or more rooms covered by the UB-DormHub system.
+* **University Management:** Authorised University users responsible for system-level oversight, user access management, and monitoring system performance.
 
-* **Room:** A specific student accommodation unit within a residence. Maintenance tickets are associated with the room where the fault occurs.
+* **Residence:** A University of Botswana student accommodation facility containing one or more residence blocks and rooms covered by UB-DormHub.
 
-* **Fault Report:** A report submitted by a resident student describing a maintenance problem affecting their assigned room.
+* **Residence Block:** A defined section of a University residence containing multiple student rooms.
 
-* **Maintenance Ticket:** A stateful system entity created from a valid fault report to manage the maintenance problem throughout its lifecycle. A ticket transitions through:  
-  `Reported` → `Verified` → `Assigned` → `In Progress` → `Resolved` → `Closed`.
+* **Room:** A specific student accommodation unit within a residence block. A room is associated with a resident student and may be the location of a maintenance complaint.
 
-  A reported ticket may also transition to `Rejected` when the report is not accepted for maintenance action.
+* **Maintenance Complaint:** A system record representing a maintenance problem reported by a resident student. It contains information about the reported problem, affected room, reporting student, and current complaint status.
 
-* **Room Condition Report:** A digital checklist completed during student move-in/check-in to record the condition of a room and identify pre-existing defects.
+* **Complaint Form:** The complaint documentation generated from a maintenance complaint and used to provide the information required for processing the complaint.
 
-* **Ticket Status:** The current state of a maintenance ticket within its defined lifecycle.
+* **Certification Record:** A record of the verification or certification decision made by an authorised Student Welfare Officer for a maintenance complaint.
 
-* **Reported:** The initial status of a newly created maintenance ticket awaiting Student Welfare verification.
+* **Work Order:** A maintenance work record created for an eligible maintenance complaint and assigned to Maintenance Staff for physical repair.
 
-* **Verified:** The status of a maintenance ticket after an authorised Student Welfare Officer confirms that the reported fault is valid.
+* **Complaint Status:** The current state of a maintenance complaint within its defined lifecycle.
 
-* **Rejected:** The status of a reported maintenance ticket that has been determined not to be valid or eligible for maintenance action.
+* **Reported:** The initial status of a newly created maintenance complaint. The complaint is awaiting Student Welfare verification.
 
-* **Assigned:** The status of a verified maintenance ticket after it has been allocated to a maintenance staff member.
+* **Verified:** The status of a maintenance complaint after an authorised Student Welfare Officer confirms that the complaint is valid for maintenance action.
 
-* **In Progress:** The status indicating that the assigned maintenance staff member has started working on the reported fault.
+* **Rejected:** The status of a maintenance complaint that has been reviewed and determined not to be eligible for maintenance action.
+
+* **Assigned:** The status indicating that a verified maintenance complaint has been allocated to a Maintenance Staff member through a work order.
+
+* **In Progress:** The status indicating that the assigned Maintenance Staff member has started carrying out the required maintenance work.
 
 * **Resolved:** The status indicating that the reported maintenance problem has been repaired by Maintenance Staff.
 
-* **Closed:** The final status of a maintenance ticket after the maintenance workflow has been completed.
+* **Closed:** The final status of a maintenance complaint after the required maintenance work has been resolved and the maintenance workflow has been completed.
 
-* **Verification:** The process through which an authorised Student Welfare Officer reviews a reported fault and determines whether it should proceed to Maintenance.
+* **Verification:** The process through which an authorised Student Welfare Officer reviews a reported maintenance complaint and determines whether it is valid for maintenance action.
 
-* **Assignment:** The process of allocating a verified maintenance ticket to an appropriate Maintenance Staff member.
+* **Certification:** The recording of a successful verification decision by Student Welfare, represented by a Certification Record.
 
-* **Resolution:** The process of completing the physical repair associated with a maintenance ticket and marking the fault as resolved.
+* **Assignment:** The process through which a Maintenance Manager allocates a verified maintenance complaint to an appropriate Maintenance Staff member.
 
-* **Closure:** The final completion of a maintenance ticket after the reported fault has been resolved.
+* **Repair:** The physical maintenance work performed by Maintenance Staff to correct the reported problem.
+
+* **Resolution:** The completion of the physical repair associated with a maintenance complaint and the recording of the work as resolved.
+
+* **Closure:** The final completion of a maintenance complaint after the reported problem has been resolved.
+
+* **Complaint Status Tracking:** The process of allowing authorised users to view the current status and progress of a maintenance complaint.
+
+* **Performance Report:** Information generated by UB-DormHub to support monitoring of system performance by authorised University Management users.
+
+* **Role-Based Access:** The restriction of system functions according to the authorised role of the user.
+
+* **Authentication:** The process of confirming a user's identity before granting access to UB-DormHub.
+
