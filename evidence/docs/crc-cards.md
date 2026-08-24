@@ -2,114 +2,198 @@
 
 ---
 
-##  MaintenanceTicket
+# CRC Cards: UB-DormHub
+
+CRC stands for **Class, Responsibilities, and Collaborators**.
+
+The CRC cards identify the main domain concepts in UB-DormHub, what each
+concept is responsible for, and which other concepts it interacts with.
+
+---
+
+## CRC-01 — MaintenanceComplaint
 
 ### Responsibilities
 
-- Store the maintenance problem description.
-- Maintain the ticket's current status.
-- Associate the ticket with the reporting student.
-- Associate the ticket with the affected room.
-- Record assignment to maintenance staff.
-- Support valid status transitions.
-- Reject invalid status transitions.
+- Represent a reported maintenance problem.
+- Store the details of the reported fault.
+- Identify the student who reported the complaint.
+- Identify the affected room.
+- Maintain the current complaint status.
+- Support valid complaint-status transitions.
+- Prevent invalid status transitions.
+- Provide the complaint information required for verification, assignment,
+  repair tracking, and closure.
 
 ### Collaborators
 
-- Student
+- ResidentStudent
 - Room
+- ComplaintForm
+- CertificationRecord
+- WorkOrder
 - StudentWelfareOfficer
-- MaintenanceAdministrator
+- MaintenanceManager
+
+---
+
+## CRC-02 — WorkOrder
+
+### Responsibilities
+
+- Represent maintenance work created for an eligible complaint.
+- Identify the Maintenance Staff member assigned to the work.
+- Record maintenance work progress.
+- Support the transition of maintenance work to resolved.
+- Provide work information for repair monitoring and complaint-status
+  tracking.
+
+### Collaborators
+
+- MaintenanceComplaint
 - MaintenanceStaff
-- TicketStatus
-
----
-
-## Student
-
-### Responsibilities
-
-- Identify the reporting resident.
-- Report a maintenance problem for an associated room.
-- View maintenance tickets that belong to the student's authorised scope.
-
-### Collaborators
-
-- Room
-- MaintenanceTicket
-
----
-
-##  Room
-
-### Responsibilities
-
-- Identify the residence room affected by a maintenance problem.
-- Maintain its relationship to the residence.
-- Identify the student assigned to the room.
-- Provide the room context for maintenance tickets.
-
-### Collaborators
-
-- Student
-- MaintenanceTicket
-
----
-
-##  StudentWelfareOfficer
-
-### Responsibilities
-
-- Review reported maintenance tickets.
-- Verify valid reports.
-- Reject invalid reports.
-- Ensure that only tickets in the `Reported` state are verified or rejected.
-
-### Collaborators
-
-- MaintenanceTicket
-- Student
+- MaintenanceManager
 - Room
 
 ---
 
-##  MaintenanceAdministrator
+## CRC-03 — ResidentStudent
 
 ### Responsibilities
 
-- Review verified maintenance tickets requiring assignment.
-- Assign verified tickets to appropriate maintenance staff.
-- Ensure that only verified tickets are assigned.
+- Report maintenance faults affecting an assigned room.
+- Provide the information required to create a maintenance complaint.
+- View the status of their maintenance complaint.
+- Receive information about the progress of their reported fault.
 
 ### Collaborators
 
-- MaintenanceTicket
+- Room
+- MaintenanceComplaint
+- ComplaintForm
+
+---
+
+## CRC-04 — StudentWelfareOfficer
+
+### Responsibilities
+
+- Review reported maintenance complaints.
+- Verify whether a reported complaint is valid.
+- Reject complaints that do not satisfy the verification requirements.
+- Certify valid maintenance complaints.
+- Ensure that only eligible complaints proceed to Maintenance.
+
+### Collaborators
+
+- MaintenanceComplaint
+- CertificationRecord
+- ResidentStudent
+- Room
+
+---
+
+## CRC-05 — MaintenanceManager
+
+### Responsibilities
+
+- Review verified maintenance complaints requiring action.
+- Assign eligible complaints to appropriate Maintenance Staff.
+- Monitor ongoing maintenance repairs.
+- View the progress of assigned work.
+
+### Collaborators
+
+- MaintenanceComplaint
+- WorkOrder
 - MaintenanceStaff
 
 ---
 
-##  MaintenanceStaff
+## CRC-06 — MaintenanceStaff
 
 ### Responsibilities
 
-- Receive assigned maintenance tickets.
-- Start maintenance work.
-- Update a ticket to `In Progress`.
-- Mark completed maintenance work as `Resolved`.
+- View work orders assigned to them.
+- Perform the physical maintenance work.
+- Record repair progress.
+- Mark completed maintenance work as resolved.
 
 ### Collaborators
 
-- MaintenanceTicket
+- WorkOrder
+- MaintenanceComplaint
 - Room
 
 ---
 
+## CRC-07 — Room
 
+### Responsibilities
 
-## Responsibility Allocation Rationale
+- Identify the physical room affected by a maintenance complaint.
+- Identify the student associated with the room.
+- Provide the location information required for maintenance work.
 
-Responsibilities are allocated to the domain concept that owns or has the
-information required to perform the responsibility.
+### Collaborators
+
+- ResidentStudent
+- MaintenanceComplaint
+- WorkOrder
+- ResidenceBlock
+
+---
+
+## CRC-08 — ComplaintForm
+
+### Responsibilities
+
+- Represent the complaint documentation generated from a maintenance
+  complaint.
+- Contain the information required to identify and process the complaint.
+- Provide complaint information to authorised users during the maintenance
+  workflow.
+
+### Collaborators
+
+- MaintenanceComplaint
+- ResidentStudent
+- StudentWelfareOfficer
+
+---
+
+## CRC-09 — CertificationRecord
+
+### Responsibilities
+
+- Record the verification/certification of a maintenance complaint.
+- Identify the Student Welfare Officer who performed the certification.
+- Associate the certification with the relevant maintenance complaint.
+- Provide evidence that the complaint passed the verification stage.
+
+### Collaborators
+
+- MaintenanceComplaint
+- StudentWelfareOfficer
+
+---
+
+## Responsibility Allocation
+
+Responsibilities are allocated to the concept that owns the information or
+has the authority required to perform the responsibility.
+
+For example, `MaintenanceComplaint` is responsible for maintaining its
+complaint status because the complaint owns its lifecycle.
+
+`StudentWelfareOfficer` is responsible for verification and certification
+because these activities require the Student Welfare role.
+
+`MaintenanceManager` is responsible for technician assignment, while
+`MaintenanceStaff` is responsible for carrying out and recording repair work.
+
+This allocation keeps responsibilities close to the domain concepts and
+reduces unnecessary coupling between unrelated concepts.
 
 For example, `MaintenanceTicket` is responsible for its status and valid
 status transitions because it contains the ticket state. Student Welfare is
