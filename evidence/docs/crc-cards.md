@@ -4,13 +4,6 @@
 
 # CRC Cards: UB-DormHub
 
-CRC stands for **Class, Responsibilities, and Collaborators**.
-
-The CRC cards identify the main domain concepts in UB-DormHub, what each
-concept is responsible for, and which other concepts it interacts with.
-
----
-
 ## CRC-01 — MaintenanceComplaint
 
 ### Responsibilities
