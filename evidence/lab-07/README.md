@@ -11,7 +11,6 @@
 | Editable component model + readable exports | `models/component-architecture.puml`, `.svg`, `.pdf` |
 | ADR with context, alternatives, decision, consequences, risks, reconsideration triggers | `decisions/ADR-001-architecture.md` |
 
-Open the `.puml` in any PlantUML editor (VS Code "PlantUML" extension, plantuml.com, or `java -jar plantuml.jar`) to edit; re-export SVG with `-tsvg`.
 
 ## Exit record
 
