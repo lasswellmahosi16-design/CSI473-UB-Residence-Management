@@ -1,4 +1,4 @@
-# UB-DormHub - Data integrity (Lab 8)
+# UB-DormHub - Data integrity
 
 
 ## 1. Integrity rules and enforcement
@@ -43,7 +43,7 @@ Some rules cannot be guaranteed by a single SQL `CHECK` because they span tables
 
 These are therefore checked by application transactions plus reconciliation/fault-injection tests, not by pretending the DDL alone can express every domain invariant.
 
-## 4. Main integrity risk (Lab 8 exit record)
+## 4. Main integrity risk
 
 | | |
 |---|---|
