@@ -1,7 +1,4 @@
-# UB-DormHub - Quality scenarios to architecture (Lab 7)
-
-Traceability from the Phase 1 quality scenarios (report section 5) to design obligations and the architecture elements that carry them.
-Component names match `models/component-architecture.puml` and the Phase 1 report section 8.3.
+# UB-DormHub - Quality scenarios to architecture 
 
 ## 1. The three scenarios that shape the architecture most
 
