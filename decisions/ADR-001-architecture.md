@@ -6,7 +6,7 @@
 * **Deciders:** Team 5 - Lasswell Mahosi, Jayson Maleya, Siphosethu Tsela, Thobo Modise, Tony Moroke
 * **Refines:** D-003 (preliminary layered boundary). Builds on D-001 (verification inside the system) and D-002 (domain responsibility).
 * **Traceability:** QS-04, QS-03, QS-08 (drivers); QS-02, QS-07 (supporting); FR-04..FR-08, FR-11, FR-12, FR-14, FR-15; BR-02, BR-03, BR-04, BR-09, BR-13, BR-15.
-* **Evidence:** `docs/architecture-options.md`, `docs/quality-to-architecture.md`, `models/component-architecture.puml`
+* **Evidence:** `docs/architecture-options.md`, `docs/quality-to-architecture.md`, `models/component-architecture`
 
 ## 1. Context
 
