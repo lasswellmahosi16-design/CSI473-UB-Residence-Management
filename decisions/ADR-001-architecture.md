@@ -10,7 +10,7 @@
 
 ## 1. Context
 
-UB-DormHub moves a maintenance complaint through `Reported -> Verified -> Assigned -> In Progress -> Resolved -> Closed`, with `Rejected` and a controlled rework path. Several use cases update related records atomically: report fault creates a `MaintenanceComplaint` and `ComplaintForm`; successful verification changes the complaint to `Verified` and creates a `CertificationRecord`; assignment changes the complaint to `Assigned` and creates/updates its `WorkOrder`. Five system roles have different protected actions. SMS, Teams and offline synchronisation are deferred. The prototype uses synthetic or anonymised data for one residence or a controlled set of sample rooms.
+UB-DormHub moves a maintenance complaint through `Reported -> Verified -> Assigned -> In Progress -> Resolved -> Closed`, with `Rejected` and a controlled rework path. Several use cases update related records atomically: report fault creates a `MaintenanceComplaint` and `ComplaintForm`; successful verification changes the complaint to `Verified` and creates a `CertificationRecord`; assignment changes the complaint to `Assigned` and creates/updates its `WorkOrder`. Five system roles have different protected actions. The prototype uses synthetic or anonymised data for one residence or a controlled set of sample rooms.
 
 The quality scenario that most influenced this decision is **QS-04 Reliability**: a persistence failure must never leave partial state or a false success.
 
