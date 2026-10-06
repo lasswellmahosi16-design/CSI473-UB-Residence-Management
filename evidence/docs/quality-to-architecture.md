@@ -37,6 +37,6 @@ QS-01, QS-05 and QS-06 are mostly met at UI and query level, so they do not push
 | O-7, O-8 | Domain Model & Business Rules (`MaintenanceComplaint`) | FR-04, FR-14; BR-01, BR-03, BR-08, BR-09 | Transition table test: every disallowed transition (e.g. `Reported -> Assigned`, `In Progress -> Closed`) is rejected and state is unchanged. |
 | O-9 | Work Order Service, Web UI | FR-07; QS-07 | Inspect the work-order response: no other student's data, no unrelated complaints. |
 
-## 4. Highest architectural risk (Lab 7 exit)
+## 4. Highest architectural risk
 
 Several services (Verification, Work Order) change the same `MaintenanceComplaint` state. If the transaction boundary is not applied consistently, or a service sets status directly, a complaint could be `Verified` with no CertificationRecord. Mitigation: O-1, O-2 and O-8, checked by the fault-injection and transition tests above.
