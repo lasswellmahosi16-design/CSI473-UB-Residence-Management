@@ -1,0 +1,107 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT">
+  <diagram id="lab7-component" name="Lab 7 - Component Architecture">
+    <mxGraphModel dx="678" dy="309" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=24;fontStyle=1;" value="&lt;b&gt;UB-DormHub — Component Architecture&lt;/b&gt;" vertex="1">
+          <mxGeometry height="40" width="1050" x="300" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=13;fontColor=#666666;" value="&amp;nbsp;responsibilities, dependency direction, trust boundary and persistence boundary" vertex="1">
+          <mxGeometry height="28" width="1010" x="320" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="userBoundary" parent="1" style="swimlane;html=1;rounded=1;startSize=34;horizontal=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=13;fontStyle=1;" value="&lt;b&gt;CLIENT / USER BOUNDARY&lt;/b&gt;" vertex="1">
+          <mxGeometry height="650" width="270" x="60" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="roles" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=18;verticalAlign=middle;fontSize=14;fillColor=#ffffff;strokeColor=#999999;" value="&lt;b&gt;Authorised users&lt;/b&gt;&lt;br&gt;&lt;br&gt;Resident Student&lt;br&gt;Student Welfare Officer&lt;br&gt;Maintenance Manager&lt;br&gt;Maintenance Staff&lt;br&gt;University Management" vertex="1">
+          <mxGeometry height="190" width="210" x="90" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="ui" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1.5;" value="&lt;b&gt;Web UI&lt;/b&gt;&lt;br&gt;&lt;br&gt;Report fault&lt;br&gt;View complaint status&lt;br&gt;Verification queue&lt;br&gt;Work-order screens&lt;br&gt;Monitoring views" vertex="1">
+          <mxGeometry height="190" width="210" x="90" y="455" as="geometry" />
+        </mxCell>
+        <mxCell id="clientNote" parent="1" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=12;fontColor=#666666;" value="No business rules or authoritative state are owned by the browser." vertex="1">
+          <mxGeometry height="60" width="220" x="85" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="appBoundary" parent="1" style="swimlane;html=1;rounded=1;startSize=34;horizontal=1;fillColor=#f9f9f9;strokeColor=#82b366;fontSize=13;fontStyle=1;" value="&lt;b&gt;UB-DormHub APPLICATION — single deployable&lt;/b&gt;" vertex="1">
+          <mxGeometry height="710" width="850" x="375" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="access" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1.5;" value="&lt;b&gt;Access &amp; Authorisation&lt;/b&gt;&lt;br&gt;Authenticate user • enforce role permissions" vertex="1">
+          <mxGeometry height="90" width="340" x="630" y="165" as="geometry" />
+        </mxCell>
+        <mxCell id="complaint" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=13;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;Complaint Service&lt;/b&gt;&lt;br&gt;&lt;br&gt;Create complaint&lt;br&gt;Validate room association&lt;br&gt;Return current status" vertex="1">
+          <mxGeometry height="130" width="180" x="415" y="315" as="geometry" />
+        </mxCell>
+        <mxCell id="verification" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=13;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;Verification Service&lt;/b&gt;&lt;br&gt;&lt;br&gt;Verify / reject complaint&lt;br&gt;Create CertificationRecord" vertex="1">
+          <mxGeometry height="130" width="180" x="615" y="315" as="geometry" />
+        </mxCell>
+        <mxCell id="workOrder" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=13;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;Work Order Service&lt;/b&gt;&lt;br&gt;&lt;br&gt;Assign work&lt;br&gt;Progress / resolve&lt;br&gt;Rework / close" vertex="1">
+          <mxGeometry height="130" width="180" x="815" y="315" as="geometry" />
+        </mxCell>
+        <mxCell id="reporting" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=13;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;Reporting Service&lt;/b&gt;&lt;br&gt;&lt;br&gt;Read-only queues&lt;br&gt;Performance summaries" vertex="1">
+          <mxGeometry height="130" width="165" x="1015" y="315" as="geometry" />
+        </mxCell>
+        <mxCell id="domain" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=1.5;" value="&lt;b&gt;Domain Model &amp; Business Rules&lt;/b&gt;&lt;br&gt;&lt;br&gt;MaintenanceComplaint — lifecycle owner&lt;br&gt;WorkOrder • CertificationRecord • Room&lt;br&gt;Enforces valid complaint and work-order state transitions" vertex="1">
+          <mxGeometry height="125" width="530" x="535" y="505" as="geometry" />
+        </mxCell>
+        <mxCell id="repos" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=1.5;" value="&lt;b&gt;Repository Interfaces + Unit of Work&lt;/b&gt;&lt;br&gt;Load • save • query • transaction boundary" vertex="1">
+          <mxGeometry height="85" width="530" x="535" y="685" as="geometry" />
+        </mxCell>
+        <mxCell id="dataBoundary" parent="1" style="swimlane;html=1;rounded=1;startSize=34;horizontal=1;fillColor=#fffaf2;strokeColor=#d79b00;fontSize=13;fontStyle=1;" value="&lt;b&gt;PERSISTENCE BOUNDARY&lt;/b&gt;" vertex="1">
+          <mxGeometry height="650" width="300" x="1270" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="adapter" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;b&gt;Persistence Adapter&lt;/b&gt;&lt;br&gt;&lt;br&gt;Implements repository interfaces&lt;br&gt;Maps domain objects to relational data" vertex="1">
+          <mxGeometry height="125" width="220" x="1310" y="335" as="geometry" />
+        </mxCell>
+        <mxCell id="db" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=14;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=1.5;" value="&lt;b&gt;UB-DormHub Database&lt;/b&gt;&lt;br&gt;&lt;br&gt;Authoritative persisted state&lt;br&gt;Relational • ACID" vertex="1">
+          <mxGeometry height="140" width="220" x="1310" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="ui" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="access" value="HTTPS">
+          <mxGeometry relative="1" x="0.2687" y="5" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="access" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;fontSize=11;exitX=0.2;exitY=1;entryX=0.5;entryY=0;" target="complaint" value="authorised call">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="access" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;fontSize=11;exitX=0.4;exitY=1;entryX=0.5;entryY=0;" target="verification" value="authorised call">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="access" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;fontSize=11;exitX=0.6;exitY=1;entryX=0.5;entryY=0;" target="workOrder" value="authorised call">
+          <mxGeometry relative="1" x="-0.145" y="-5" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="access" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;fontSize=11;exitX=0.8;exitY=1;entryX=0.5;entryY=0;" target="reporting" value="authorised call">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="complaint" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;fontSize=11;exitX=0.5;exitY=1;entryX=0.18;entryY=0;" target="domain" value="domain operation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="verification" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;fontSize=11;exitX=0.5;exitY=1;entryX=0.42;entryY=0;" target="domain" value="domain operation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="workOrder" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;fontSize=11;exitX=0.5;exitY=1;entryX=0.68;entryY=0;" target="domain" value="domain operation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="reporting" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;fontSize=11;exitX=0.5;exitY=1;entryX=0.92;entryY=0;" target="repos" value="read query">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="domain" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;fontSize=12;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="repos" value="load / save">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="repos" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="adapter" value="implements">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="adapter" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;fontSize=12;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="db" value="SQL transaction">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="trustLabel" parent="1" style="shape=note;whiteSpace=wrap;html=1;align=left;spacingLeft=12;verticalAlign=middle;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;Trust boundary&lt;/b&gt;&lt;br&gt;Every protected request is re-authorised on the server." vertex="1">
+          <mxGeometry height="95" width="360" x="390" y="860" as="geometry" />
+        </mxCell>
+        <mxCell id="failureLabel" parent="1" style="shape=note;whiteSpace=wrap;html=1;align=left;spacingLeft=12;verticalAlign=middle;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;b&gt;Failure / transaction boundary&lt;/b&gt;&lt;br&gt;Complaint, certification and work-order writes commit atomically; failed persistence returns no false success." vertex="1">
+          <mxGeometry height="95" width="470" x="795" y="860" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
