@@ -1,7 +1,5 @@
 # UB-DormHub - Data integrity (Lab 8)
 
-Links: `models/logical-data-model.puml` / `.sql`, `docs/api-contracts/core-operation.md`, `models/deployment.puml`, `models/failure-recovery.puml`, `decisions/ADR-001-architecture.md`.
-Rule IDs follow the submitted Phase 1 report section 6.2.
 
 ## 1. Integrity rules and enforcement
 
