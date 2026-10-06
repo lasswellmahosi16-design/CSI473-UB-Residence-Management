@@ -50,11 +50,11 @@ Build UB-DormHub as **one deployable layered modular application** with the foll
 
 Full comparison using the same six criteria is in `docs/architecture-options.md`.
 
-| Alternative | Score (max 115) | Outcome |
-|---|---:|---|
-| **A. Layered modular application** | **109** | **Selected** |
-| B. Feature-sliced application | 82 | Feasible, but lifecycle/role rules risk duplication across slices |
-| C. Microservices | 50 | Rejected for this scope because distributed transactions/failures and operating cost add risk without an independent-scaling requirement |
+| Alternative | Outcome |
+|---|---|
+| **A. Layered modular application** | **Selected** |
+| B. Feature-sliced application | Feasible, but lifecycle/role rules risk duplication across slices |
+| C. Microservices | Rejected for this scope because distributed transactions/failures and operating cost add risk without an independent-scaling requirement |
 
 ## 4. Consequences
 
