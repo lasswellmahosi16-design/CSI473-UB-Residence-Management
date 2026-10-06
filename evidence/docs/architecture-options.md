@@ -34,8 +34,6 @@ Scores run from 1 (poor) to 5 (strong). They are the team's judgement, so the re
 | 6 Failure-path testability (3) | **4** - fake repository can inject failures | **3** - failures must be injected per slice | **2** - needs distributed failure simulation |
 | **Weighted total (max 115)** | **109** | **82** | **50** |
 
-Arithmetic for A: 5x5 + 5x5 + 3x4 + 4x5 + 3x5 + 3x4 = 25 + 25 + 12 + 20 + 15 + 12 = 109.
-B: 20 + 10 + 12 + 16 + 15 + 9 = 82. C: 10 + 15 + 12 + 4 + 3 + 6 = 50.
 
 ## 3. Outcome
 
