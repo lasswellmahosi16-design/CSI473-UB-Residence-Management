@@ -8,7 +8,7 @@
 |---|---|
 | Architecture drivers and design-obligation table; quality-to-architecture traceability | `docs/quality-to-architecture.md` |
 | Comparison of three feasible alternatives (same criteria) | `docs/architecture-options.md` |
-| Editable component model + readable exports | `models/component-architecture.puml`, `.svg`, `.pdf` |
+| Editable component model + readable exports | `models/component-architecture.svg`, `.pdf` |
 | ADR with context, alternatives, decision, consequences, risks, reconsideration triggers | `decisions/ADR-001-architecture.md` |
 
 
