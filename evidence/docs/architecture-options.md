@@ -1,6 +1,4 @@
-# UB-DormHub - Architecture options and comparison (Lab 7)
-
-Three realistic structures for **this** project were compared using the same criteria. Names follow the Phase 1 report and decision records D-001 to D-003.
+# UB-DormHub - Architecture options and comparison 
 
 ## 1. The alternatives
 
