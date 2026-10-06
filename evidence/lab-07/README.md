@@ -20,7 +20,6 @@ Open the `.puml` in any PlantUML editor (VS Code "PlantUML" extension, plantuml.
 **Evidence that would make us revise the decision:**
 - under 95% of complaint submissions confirmed within 2 s (QS-01) after one tuning pass;
 - scope growing to several residences needing independent releases or ownership;
-- an approved SMS/Teams integration causing complaint transactions to fail or slow in testing;
 - more than two production components changing to add a notification adapter, or UI code reaching the repository;
 - the chosen data store unable to give one atomic transaction across a use case's writes.
 
