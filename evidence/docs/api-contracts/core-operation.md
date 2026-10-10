@@ -1,4 +1,4 @@
-# API contract - Verify Maintenance Report (UC-04) - Lab 8
+# API contract - Verify Maintenance Report (UC-04) 
 
 **Why this operation:** it is the core Phase 1 interaction. It combines authorisation, input validation, lifecycle rules, transaction integrity and realistic retry/concurrency failures.
 
