@@ -1,0 +1,40 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT">
+  <diagram id="dormhub-3" name="Lab 8 - Deployment">
+    <mxGraphModel dx="1662" dy="757" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;" value="UB-DormHub – Deployment View&amp;nbsp;" vertex="1">
+          <mxGeometry height="45" width="1100" x="260" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="client" parent="1" style="swimlane;html=1;rounded=1;startSize=40;fillColor=#f8cecc;strokeColor=#b85450;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;ZONE 1: Client Device (Untrusted)&lt;br&gt;&lt;br&gt;Responsive Web Client&lt;br&gt;HTML / CSS / JavaScript&lt;br&gt;standard browser" vertex="1">
+          <mxGeometry height="210" width="320" x="40" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="net" parent="1" style="shape=cloud;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#666666;" value="UB Campus Network / Internet&lt;br&gt;HTTPS (TLS)" vertex="1">
+          <mxGeometry height="120" width="260" x="480" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="app" parent="1" style="swimlane;html=1;rounded=1;startSize=32;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;ZONE 2: Application Server (Trusted)&lt;br&gt;&lt;br&gt;UB-DormHub single deployable&lt;br&gt;• HTTP endpoints / presentation&lt;br&gt;• Application Services&lt;br&gt;• Domain Model &amp;amp; Business Rules&lt;br&gt;• Repository Interfaces&lt;br&gt;• Persistence Adapter" vertex="1">
+          <mxGeometry height="320" width="370" x="810" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="db" parent="1" style="swimlane;html=1;rounded=1;startSize=32;fillColor=#ffe6cc;strokeColor=#d79b00;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;ZONE 3: Database Server&lt;br&gt;No direct client access&lt;br&gt;&lt;br&gt;UB-DormHub relational data store&lt;br&gt;ACID transactions&lt;br&gt;schema: logical-data-model.sql" vertex="1">
+          <mxGeometry height="240" width="300" x="1330" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="d1" edge="1" parent="1" source="client" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" target="net" value="HTTPS :443&lt;br&gt;bearer token&lt;br&gt;Idempotency-Key">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d2" edge="1" parent="1" source="net" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" target="app" value="HTTPS :443">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d3" edge="1" parent="1" source="app" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;" target="db" value="SQL over private TLS link&lt;br&gt;1 transaction per use case">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n1" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Trust boundary 1&lt;br&gt;All client input untrusted.&lt;br&gt;Authentication + role check on server." vertex="1">
+          <mxGeometry height="110" width="360" x="420" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="n2" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Trust boundary 2 / failure-prone dependency&lt;br&gt;DB accepts app-server connections only.&lt;br&gt;On failure: rollback + 503 PERSISTENCE_UNAVAILABLE." vertex="1">
+          <mxGeometry height="120" width="480" x="1100" y="525" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
