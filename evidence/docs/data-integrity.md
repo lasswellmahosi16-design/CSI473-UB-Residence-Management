@@ -51,4 +51,3 @@ These are therefore checked by application transactions plus reconciliation/faul
 | **Design mechanism** | One transaction per use case (ADR-001 R1), conditional `Reported` update, unique CertificationRecord per complaint, idempotency record with stored response, controlled rollback/error handling. |
 | **Test needed** | Inject failure after the conditional status update but before CertificationRecord commit and expect complaint still `REPORTED`; replay the same Idempotency-Key and expect one decision; race two new-key decisions and expect one success and one 409; run a reconciliation query after tests. |
 
-The executable database-level checks are in `tests/data_integrity_check.py`.
