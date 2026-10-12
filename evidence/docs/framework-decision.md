@@ -1,4 +1,4 @@
-# UB-DormHub - Framework and dependency-management decision (Lab 9)
+# UB-DormHub - Framework and dependency-management decision 
 
 ## Decision
 
