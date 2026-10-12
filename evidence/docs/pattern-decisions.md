@@ -53,8 +53,6 @@ The domain (`MaintenanceComplaint`, `CertificationRecord`) has no dependency on 
 | `AccessControlPort` | Dependency inversion for authenticated role checks |
 | `MaintenanceComplaint` | Domain lifecycle owner; remains framework-independent |
 
-## 6. Exit record
-
 **Greatest benefit:** the repository/transaction interface boundary. It lets the team test UC-04 against fake success, persistence failure and stale-state behaviour while keeping database details outside the core service.  
 **Cost:** more interfaces, adapters and wiring than direct database access.  
 **Test:** replace the repository/transaction ports with fakes; inject a failure after the complaint transition is attempted and confirm the externally visible result is a controlled persistence error and no committed partial state exists.
