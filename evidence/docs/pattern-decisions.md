@@ -1,9 +1,8 @@
-# UB-DormHub - Pattern and technique decisions (Lab 9)
+# UB-DormHub - Pattern and technique decisions
 
 **Scope:** UC-04 Verify Maintenance Report.  
 **Traceability:** FR-04, FR-05, FR-11, FR-12; BR-02, BR-03, BR-04, BR-09, BR-13, BR-14; AC-03, AC-04, AC-12; QS-03 Authorisation; QS-04 Reliability.
 
-Lab 9 starts from concrete design problems rather than from pattern names. The selected techniques refine the layered modular architecture chosen in ADR-001 and preserve the Lab 8 API and transaction rules.
 
 ## 1. Design problems
 
