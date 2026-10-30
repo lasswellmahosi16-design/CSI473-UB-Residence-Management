@@ -1,4 +1,4 @@
-# UB-DormHub - Usability and accessibility traceability (Lab 10)
+# UB-DormHub - Usability and accessibility traceability
 
 Adds the user-interface layer to the Phase 1 traceability matrix (requirement -> use case -> element -> verification).
 
