@@ -1,0 +1,39 @@
+PASS verify creates certification
+PASS reject records reason without certification
+PASS reject validates minimum reason
+PASS reject validates maximum reason
+PASS role enforcement denies student
+PASS same key same request replay
+PASS same key changed complaint conflicts
+PASS same key changed rejection reason conflicts
+PASS stale-state decision conflicts
+PASS unknown complaint rejected
+PASS invalid UUID rejected
+PASS reason not accepted for verify
+PASS persistence failure rolls back complaint and certification
+PASS two simultaneous decisions commit only once
+TOTAL 14 tests passed, 0 failed
+PASS health
+PASS auth required
+PASS student sees only own complaints
+PASS student cannot see other student data
+PASS student cannot verify
+PASS reject missing category
+PASS reject too short report
+PASS student submits report
+PASS new record retains escaped description
+PASS new report appears in student list
+PASS officer sees all reported complaints
+PASS verification creates certification
+PASS identical retry is idempotent
+PASS duplicate verification blocked
+PASS reject requires explanation
+PASS reject updates status without certification
+PASS same key changed request conflict
+PASS student sees verified status
+PASS missing complaint returns 404
+PASS only one concurrent decision succeeds
+PASS reset demo
+PASS reset restores example status
+PASS reset clears user reports
+TOTAL 23 integration checks passed; 0 failed
