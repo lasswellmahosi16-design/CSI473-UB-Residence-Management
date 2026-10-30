@@ -1,8 +1,5 @@
 # UB-DormHub - Alternative UI states 
 
-**Traceability:** QS-02, QS-03, QS-04, QS-05, QS-06, QS-07; AC-02, AC-03, AC-04, AC-05, AC-09, AC-12; error codes from `docs/api-contracts/core-operation.md`.
-Screen IDs match `models/navigation.puml` and `prototype/wireframes.html` (frame numbers in brackets).
-
 Only states that matter for this project are designed. Offline caching and push notifications are **not** designed (out of scope per the approval conditions). The prototype assumes an online connection and shows a clear message when it is lost.
 
 ## 1. State table
