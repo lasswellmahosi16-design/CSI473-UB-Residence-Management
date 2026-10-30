@@ -1,9 +1,4 @@
-# UB-DormHub - Usability test record (Lab 10)
-
-**Prototype tested:** `prototype/wireframes.html` (first version, commit "Lab 10: first draft")
-**Traceability:** QS-05 Usability (4 of 5 first-time users finish unaided within 3 minutes), QS-06 Accessibility, T1/T2/T3 in `docs/user-profile-and-tasks.md`.
-
-> **Team: read this first.** Everything in sections 3 and 4 marked **FILL IN** must come from your real session with three people. The brief requires "at least one design change follows from observed user difficulty", so a change that is not based on something you really saw will not count. Section 2 lists risks I expect from a design review. They are **guesses to watch for**, not results.
+# UB-DormHub - Usability test record
 
 ## 1. Test set-up (10 minutes of preparation)
 
