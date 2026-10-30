@@ -1,7 +1,5 @@
 # UB-DormHub - User profile and task scenarios
 
-**Traceability:** UC-01, UC-04, UC-09; FR-01, FR-03, FR-04, FR-09, FR-11, FR-12; QS-05 Usability, QS-06 Accessibility, QS-02 Status accuracy, QS-03 Authorisation, QS-07 Privacy.
-Contract used: `docs/api-contracts/core-operation.md` (Verify Maintenance Report). Slice: Report -> Verify -> track status.
 
 ## 1. Primary user profile - Resident Student
 
