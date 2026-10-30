@@ -1,7 +1,5 @@
 # UB-DormHub - Accessibility checklist
 
-**Traceability:** QS-06 Accessibility (100% of controls operable without a mouse, no keyboard trap), QS-05 Usability, QS-07 Privacy.
-**Reference:** WCAG 2.1 level AA ideas, kept to what a semester prototype can verify.
 
 **Status key:** Designed = built into the wireframe/spec. To verify = must be tested on the working prototype. Nothing here is marked "Passed" because there is no implementation yet.
 
